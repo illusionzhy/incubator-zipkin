@@ -86,6 +86,13 @@ final class JsonAdapters {
                 }
                 reader.endObject();
                 break;
+              case "tags1":
+                reader.beginObject();
+                while (reader.hasNext()) {
+                  result.putTag(reader.nextName(), reader.nextString());
+                }
+                reader.endObject();
+                break;
               case "debug":
                 result.debug(reader.nextBoolean());
                 break;
